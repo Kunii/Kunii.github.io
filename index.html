@@ -22,7 +22,7 @@
             
             document.getElementById("airhornTest").onclick = airhornTestClick;
             document.getElementById("startButton").onclick = startCounter;
-            document.getElementById("cTime").innerHTML = curTime.getHours() + ":" + curTime.getMinutes();
+            document.getElementById("cTime").innerHTML = pad(curTime.getHours(), 2) + ":" + pad(curTime.getMinutes(), 2);
             
             
         }
@@ -83,7 +83,19 @@
                 
             }
 
-            document.getElementById("cTime").innerHTML = curTime.getHours() + ":" + curTime.getMinutes() + ":" + curTime.getSeconds();
+            document.getElementById("cTime").innerHTML = pad(curTime.getHours(), 2) + ":" + pad(curTime.getMinutes(), 2) + ":" + pad(curTime.getSeconds(), 2);
+            
+        }
+        
+        function pad(i, s)
+        {
+            
+            var out = "" + i;
+            
+            while(out.length < s)
+                out = "0" + out;
+            
+            return out;
             
         }
         
